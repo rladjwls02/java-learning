@@ -11,4 +11,13 @@ public class Member {
         this.name = name;
         this.age = age;
     }
+    public Integer getId() {
+        return id;
+    }
+    public String getName() {
+        return name;
+    }
+    public int getAge() {
+        return age;
+    }
 }

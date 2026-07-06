@@ -11,6 +11,9 @@ public class DemoApplication {
 		//SpringApplication.run(DemoApplication.class, args);
 
 		Member djwls = new Member(20020329, "김어진", 25);
+		System.out.println(djwls.getId());
+		System.out.println(djwls.getAge());
+		System.out.println(djwls.getName());
 
 	}
 }
