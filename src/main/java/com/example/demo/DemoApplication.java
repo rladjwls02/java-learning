@@ -26,10 +26,6 @@ public class DemoApplication {
 		System.out.println("변수명 앞에 반드시 형변환 명시해서 다운캐스팅 " + c);
 
 		//기존에 쓰던 switch문 (나도 이렇게 썼음)
-
-
-
-
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("1부터 5사이의 정수값을 입력하시오: ");
 		int input = scanner.nextInt();
@@ -48,7 +44,7 @@ public class DemoApplication {
 		System.out.println("0~5사이의 값을 입력하시오");
 		int num = scanner.nextInt();
 		String cal = switch (num) {
-			case 0, 2, 4-> "짝수";
+			case 0, 2, 4 -> "짝수";
 			case 1, 3, 5 -> "홀수";
 			default -> "유효값이 아님";
 
