@@ -1,23 +1,24 @@
 package com.example.demo.member;
 
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+
+@Getter
+@Setter
+@ToString(onlyExplicitlyIncluded = true, includeFieldNames = false)
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@AllArgsConstructor(access = AccessLevel.PUBLIC)
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Member {
-     private Integer id;
-     private String name;
-     private int age;
-
-
-    public Member(Integer id, String name, int age) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-    }
-    public Integer getId() {
-        return id;
-    }
-    public String getName() {
-        return name;
-    }
-    public int getAge() {
-        return age;
-    }
+    @ToString.Include(name = "memberId")
+    @EqualsAndHashCode.Include
+    /* private */ Integer id;
+    @ToString.Include(rank = -1)
+    @EqualsAndHashCode.Include
+    /* private */ String name;
+    /* private */ int age;
+    /* private */ String email;
 }
+
+//  public boolean equals(Member member) {
+//      return this.hashCode() == member.hashCode();
