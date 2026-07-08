@@ -46,5 +46,13 @@ public class DemoApplication {
 
 		};
 		System.out.println(cal);
+
+		Integer reference_a = 128;
+		Integer reference_b = 128;
+
+		System.out.println(reference_a == reference_b);
+		System.out.println(reference_a.equals(reference_b));
+		System.out.println(reference_a);
+		System.out.println(reference_b);
 	}
 }
