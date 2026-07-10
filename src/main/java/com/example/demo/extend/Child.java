@@ -1,5 +1,8 @@
 package com.example.demo.extend;
 
+import lombok.ToString;
+
+@ToString
 public class Child extends Parents {
     String adress;
     int phoneNum;
@@ -10,22 +13,11 @@ public class Child extends Parents {
     }
 
     public static void main(String[] args) {
-        Child boy = new Child();
-        boy.id = 332;
-        boy.name ="김어진";
-        boy.adress = "서울시 양천구";
-        boy.phoneNum = 7151;
+        Parents parents = new Child();
+        Child child1 =(Child)parents;
+        child1.name = "김어진";
+        child1.id = 7;
 
-        boy.play();
-        boy.onlyParents();
-
-        Parents boy2 = new Child();
-        boy2.play();
-        boy2.onlyParents();
-
-        Parents boy3 = new Parents();
-        boy3.play();
-        boy3.onlyParents();
 
     }
 }

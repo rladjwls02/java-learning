@@ -1,4 +1,4 @@
-package com.example.demo.game;
+package com.example.demo.Hero;
 
 import lombok.RequiredArgsConstructor;
 

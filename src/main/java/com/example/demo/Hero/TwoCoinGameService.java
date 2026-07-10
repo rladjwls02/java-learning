@@ -1,6 +1,4 @@
-package com.example.demo.game;
-
-import lombok.RequiredArgsConstructor;
+package com.example.demo.Hero;
 
 //@RequiredArgsConstructor
 public class TwoCoinGameService implements IGameService{

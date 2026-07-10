@@ -1,5 +1,13 @@
 package com.example.demo.extend;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
+
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class Parents {
     int id;
     String name;

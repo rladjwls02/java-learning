@@ -3,7 +3,7 @@ package com.example.demo.assignment;
 import org.apache.catalina.util.ToStringUtil;
 
 public class Game {
-    public String[] name;
+    String[] name;
     int count;
 
     public Game(String[] name, int count) {
@@ -13,11 +13,11 @@ public class Game {
     }
 
     public String[] play() {
-        System.out.println("---플레이어 목록---");
-        for (String n : this.name) {
-            System.out.println(n);
+        for (String each : this.name) {
+            System.out.println(each);
         }
-        System.out.println(this.count);
-        return new String[]{"Kim", "GoodPlayer", "아이템10번씀"};
+        System.out.println(count);
+        return new String[]{"우승자는: 애란","LapTime: 11:04","아이템 사용횟수3" };
     }
+
 }

@@ -1,6 +1,8 @@
-package com.example.demo.game;
+package com.example.demo.Hero;
 
 public class StrHero implements Hero{
+    private String name;
+
     @Override
     public void attack() {
         System.out.println("Fianl Attack");
@@ -12,5 +14,12 @@ public class StrHero implements Hero{
 
     public void additional() {
         System.out.println("Berserker");
+    }
+
+    @Override
+    public void getInformation() {
+        System.out.println(this.name);
+        additional();
+        attack();
     }
 }
