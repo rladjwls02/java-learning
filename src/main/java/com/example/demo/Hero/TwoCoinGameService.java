@@ -1,5 +1,7 @@
 package com.example.demo.Hero;
 
+import com.example.demo.Hero.heros.Hero;
+
 //@RequiredArgsConstructor
 public class TwoCoinGameService implements IGameService{
     private final Hero hero;

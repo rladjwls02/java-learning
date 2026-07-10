@@ -1,5 +1,6 @@
 package com.example.demo.Hero;
 
+import com.example.demo.Hero.heros.Hero;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
