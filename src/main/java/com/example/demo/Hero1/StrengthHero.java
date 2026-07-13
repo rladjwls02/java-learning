@@ -1,8 +1,5 @@
 package com.example.demo.Hero1;
 
-import com.example.demo.Hero.heroes.Hero;
-import lombok.Getter;
-
 public class StrengthHero extends BasicHero {
 
     public StrengthHero(String name) {

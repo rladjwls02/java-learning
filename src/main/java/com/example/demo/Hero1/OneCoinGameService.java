@@ -1,11 +1,11 @@
-package com.example.demo.Hero;
+package com.example.demo.Hero1;
 
-import com.example.demo.Hero1.IGameService;
-import lombok.RequiredArgsConstructor;
-
-@RequiredArgsConstructor
 public class OneCoinGameService implements IGameService {
     private final Hero hero;
+
+    public OneCoinGameService(Hero hero) {
+        this.hero = hero;
+    }
 
     @Override
     public void play() {

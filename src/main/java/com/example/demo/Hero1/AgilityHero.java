@@ -1,9 +1,5 @@
 package com.example.demo.Hero1;
 
-import com.example.demo.Hero.heroes.Hero;
-import lombok.Getter;
-import lombok.Setter;
-
 // Concrete 구현체 = class < implements Hero
 public class AgilityHero extends BasicHero {
 

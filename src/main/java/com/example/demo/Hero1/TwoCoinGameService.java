@@ -1,4 +1,4 @@
-package com.example.demo.Hero;
+package com.example.demo.Hero1;
 
 //@RequiredArgsConstructor
 public class TwoCoinGameService implements IGameService{

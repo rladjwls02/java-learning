@@ -2,16 +2,16 @@ package com.example.demo.Hero1;
 
 import java.util.Objects;
 
-public abstract class BasicHeroRepository implements HeroRepository {
-    private Hero[] heroes;
+public abstract class BasicHeroRepository<T extends Hero> implements HeroRepository<T> {
+    private T[] heroes;
 
-    public BasicHeroRepository(Hero[] heroes) {
+    public BasicHeroRepository(T[] heroes) {
         this.heroes = heroes;
     }
 
     @Override
-    public Hero findHeroByName(String name) {
-        for (Hero each : this.heroes) {
+    public T findByName(String name) {
+        for (T each : this.heroes) {
             if (each.getName().equals(name)) {
                 return each;
             }
@@ -20,32 +20,34 @@ public abstract class BasicHeroRepository implements HeroRepository {
     }
 
     @Override
-    public void create(Hero hero) {
-        Hero retrieve = findHeroByName(hero.getName());
+    public void create(T hero) {
+        T retrieve = findByName(hero.getName());
         if (Objects.nonNull(retrieve)) {
             throw new RuntimeException("똑같은 이름의 영웅이 이미 있습니다! - 입력받은 영웅 : " + hero.getName());
         }
-        Hero[] newheroes = new Hero[this.heroes.length + 1];
-        System.arraycopy(this.heroes, 0, newheroes, 0, this.heroes.length);
+        T[] newheroes = (T[]) java.util.Arrays.copyOf(this.heroes, this.heroes.length + 1);
         newheroes[this.heroes.length] = hero;
         this.heroes = newheroes;
     }
 
     @Override
     public void delete(String name) {
-        Hero retrieve = findHeroByName(name);
+        T retrieve = findByName(name);
         if (Objects.isNull(retrieve)) {
             throw new RuntimeException("지우시려는 이름의 영웅이 기존에 없습니다! - 입력받은 영웅 : " + name);
         }
         byte found = 0;
-        Hero[] newheroes = new Hero[this.heroes.length - 1];
+        T[] newheroes = (T[]) java.util.Arrays.copyOf(this.heroes, this.heroes.length - 1);
         for (int index = 0; index < this.heroes.length; index++) {
-            Hero picked = this.heroes[index];
+            T picked = this.heroes[index];
             if (!picked.getName().equals(name)) {
-                newheroes[index - found] = this.heroes[index];
+                if (index - found < newheroes.length) {
+                    newheroes[index - found] = this.heroes[index];
+                }
             } else {
                 found = 1;
             }
         }
+        this.heroes = newheroes;
     }
 }
